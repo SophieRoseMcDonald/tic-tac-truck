@@ -1,0 +1,32 @@
+.game {
+    background-color: lightGrey;
+
+}
+#grid {
+    display: flex;
+    justify-content: center;
+}
+
+td
+{
+    width:200px;
+    height:200px;
+    border: solid 1px black;
+    text-align:center;
+    font-size:20pt;
+    background-color: lightBlue;
+}
+
+.X {
+background-image: url('tic-tac-toe-X.png');
+background-size: 200px;
+background-repeat: no-repeat;
+background-position: center;
+}
+
+.O {
+    background-image: url('tic-tac-toe-O.png');
+    background-size: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
