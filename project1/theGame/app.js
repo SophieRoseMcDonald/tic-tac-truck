@@ -13,7 +13,17 @@ var winningCombinations = [
   [2, 4, 6]
 ];
 
+var checkEmptyTile = function(event) {
+  // debugger
+  var cell = event.target
+  cellId = Number(cell.id)
 
+  if (result[cellId] === null) {
+    playerTurn(event);
+  } else {
+    console.log('cant click here')
+  }
+}
 
 var checkForMatch = function() {
   // debugger
@@ -44,19 +54,15 @@ var checkForMatch = function() {
 
 
 function playerTurn(event) {
-
   var cell = event.target
   cellId = Number(cell.id)
-
   count++
   if (count % 2 === 0) {
     event.target.classList.add('X');
-    // result.push('X')
     result[cellId] = 'X'
   } else {
     // Add O to board
     event.target.classList.add('O')
-    // result.push('O')
     result[cellId] = 'O'
   }
   console.log('eventtarget: ', cell);
@@ -70,7 +76,7 @@ function playerTurn(event) {
 
 
 tile.forEach(function(elem) {
-  elem.addEventListener('click', playerTurn);
+  elem.addEventListener('click', checkEmptyTile);
 })
 
 // function checkForMatch() {
