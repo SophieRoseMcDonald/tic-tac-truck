@@ -2,6 +2,7 @@
 var tile = document.querySelectorAll('td');
 var count = 0;
 var result = [null, null, null, null, null, null, null, null, null]
+var player = document.querySelectorAll('h3')
 // var winningCombinations = [
 //   [0, 1, 2],
 //   [3, 4, 5],
@@ -37,17 +38,21 @@ var checkForMatch = function() {
     result[0] === 'X' && result[4] === 'X' && result[8] === 'X' ||
     result[2] === 'X' && result[4] === 'X' && result[6] === 'X'
   ) {
-    alert('Player X Wins!')
+    alert('Player 2 Wins!')
   } else if (result[0] === 'O' && result[1] === 'O' && result[2] === 'O' ||
     result[3] === 'O' && result[4] === 'O' && result[5] === 'O' ||
     result[6] === 'O' && result[7] === 'O' && result[8] === 'O' ||
     result[0] === 'O' && result[3] === 'O' && result[6] === 'O' ||
     result[1] === 'O' && result[4] === 'O' && result[7] === 'O' ||
+
     result[2] === 'O' && result[5] === 'O' && result[8] === 'O' ||
     result[0] === 'O' && result[4] === 'O' && result[8] === 'O' ||
     result[2] === 'O' && result[4] === 'O' && result[6] === 'O') {
-    alert('Player O Wins!')
+    alert('Player 1 Wins!')
+  } else if (result.indexOf(null) === -1){
+    alert('It looks like a tie')
   }
+
 
 }
 

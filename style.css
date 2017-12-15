@@ -1,9 +1,11 @@
-*{
+* {
   box-sizing: border-box;
 }
+
 body {
   background-color: rgb(255, 215, 1);
 }
+
 /*HEADER*/
 
 header {
@@ -11,7 +13,7 @@ header {
   justify-content: center;
   align-items: center;*/
   padding: 20px;
-width: 100%;
+  width: 100%;
 }
 
 header img {
@@ -21,26 +23,27 @@ header img {
   padding: 10px;
   height: 150px;
   width: 150px;
-
 }
+
 nav {
   margin-left: 300px;
   margin-right: 300px;
+  margin-bottom: 5px;
   /*display:flex;
   justify-content:space-around;
   align-items: center;*/
 }
-.wrapper {
 
+.wrapper {
   display: flex;
-  justify-content:space-around;
-flex-direction: row;
+  justify-content: space-around;
+  flex-direction: row;
   order: 1;
   flex-wrap: wrap;
   margin: ;
-    background-color: rgb(83, 200, 253);
-    border: 4px solid black;
-    border-radius: 20px;
+  background-color: rgb(83, 200, 253);
+  border: 4px solid black;
+  border-radius: 20px;
   /*align-content: center;*/
   height: 200px;
   width: 100%;
@@ -50,7 +53,8 @@ flex-direction: row;
   background-color: rgb(255, 215, 1);
   border: dashed 3px black;
   border-radius: 10px;
-  color: white;
+  color: black;
+  font-weight: bold;
   padding: 15px 32px;
   margin: 5px 120px 5px 120px;
   text-align: center;
@@ -60,58 +64,53 @@ flex-direction: row;
 }
 
 #reset:hover {
-  background-color: rgb(83,200,253);
-    color: black;
-}
-#newGame:hover {
-  background-color: rgb(83,200,253);
-    color: black;
-}
-h1 {
-display: flex;
-align-self: center;
-justify-content: space-between;
-font-size: 100px;
-color: black;
+  background-color: rgb(83, 200, 253);
+  color: black;
 }
 
+#newGame:hover {
+  background-color: rgb(83, 200, 253);
+  color: black;
+}
+
+h1 {
+  display: flex;
+  align-self: center;
+  justify-content: space-between;
+  font-size: 100px;
+  color: black;
+}
 
 /*LEFT SIDE PLAYER 1*/
 
-
-#player1{
+#player1 {
   background-image: url(images/signpost.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   /*background-size: 100%;*/
-  display:inline-block;
+  display: inline-block;
   border-radius: 20px;
   border-radius: 20px 0px 0px 20px;
   /*display: flex;*/
   order: 2;
   width: 25%;
   height: 700px;
-
-    /*color: rgb(31, 213, 89);*/
-
+  /*color: rgb(31, 213, 89);*/
 }
 
-
- #player2 {
-   background-image: url(images/signpost.jpg);
-   background-repeat: no-repeat;
-   background-position: center;
-   background-size: cover;
-
-   display:inline-block;
-   border-radius: 20px;
-   border-radius: 20px;
-   border-radius: 0px 20px 20px 0px;
-   height: 700px;
+#player2 {
+  background-image: url(images/signpost.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: inline-block;
+  border-radius: 20px;
+  border-radius: 20px;
+  border-radius: 0px 20px 20px 0px;
+  height: 700px;
   order: 4;
   width: 25%;
-
 }
 
 h3 {
@@ -138,30 +137,30 @@ h3 {
   font-size: 2em;
   /*margin-top: 300px;
   margin-right: 100px;*/
-
 }
 
 #play1score, #play2score {}
 
 /*MAIN*/
+
 #board {
   display: flex;
   align-self: center;
 }
+
 main {
-  display:flex;
+  display: flex;
   order: 3;
-  justify-content:space-around;
+  justify-content: space-around;
   align-content: baseline;
-  width: 50%;
+  width: 45%;
   height: 700px;
   border-radius: 0px;
   background-color: white;
-
 }
 
 table .game {
-  display:flex;
+  display: flex;
   align-self: center;
   width: 300px;
   height: 300px;
@@ -171,48 +170,57 @@ table .game {
 }
 
 /*grid*/
+th{
+  padding: 25px;
+}
 td {
   width: 200px;
   height: 200px;
-  border: dashed 4px #FFB14B;
+  border: dashed 4px black;
   border-radius: 10px;
   text-align: center;
   font-size: 20pt;
   margin: 5px;
-  background-color: rgb(31, 213, 89);;
+  background-color: rgb(83, 200, 253);
+  /*background-color: rgb(31, 213, 89);*/
+  ;
 }
 
 footer {
-
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-content: center;
   height: 150px;
   width: 100%;
   margin-top: 10px;
-  background-color: rgb(83,200,253);
+  background-color: rgb(83, 200, 253);
   border-radius: 10px;
   border: solid 4px black
 }
-footer img {
+footer p {
+  padding: 5px; 
+}
+footer span {
+  font-weight: bold;
+}
 
+footer img {
   height: 200px;
   width: 600px;
-
 }
+
 /*RIGHTSIDE PLAYER 2*/
 
+.X {
+  background-image: url('images/hammerspanyel.png');
+  background-size: 150px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
-  .X {
-    background-image: url('images/hammerspanyel.png');
-    background-size: 150px;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-
-  .O {
-    background-image: url('images/diggeryel.png');
-    background-size: 150px;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
+.O {
+  background-image: url('images/diggeryel.png');
+  background-size: 150px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
