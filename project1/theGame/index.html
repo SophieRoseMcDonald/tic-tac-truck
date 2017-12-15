@@ -10,32 +10,64 @@
 </head>
 
 <body>
+  <header>
+    <div class='wrapper'>
+
+      <img src='images/diggeryel.png'>
+      <h1>Tic Tac Toe</h1>
+      <img src='images/hammerspanyel.png'>
+      </div>
+    <!-- <h3>Battle of...</h3>
+  <p>Grab a friend to play against!</p> -->
+  </header>
+<nav>
+  <button id='newGame'>New Game</button>
+    <button id='reset'>Reset</button>
+</nav>
+
   <div id='board'>
-    <div>PLAYER 1</div>
-    <table class='game'>
-      <th>
-        <button>New Game</button>
-      </th>
-      <th>TIC TAC TOE</th>
-      <th><button>Reset</button></th>
-      <tr>
-        <td id='0'></td>
-        <td id='1'></td>
-        <td id='2'></td>
-      </tr>
-      <tr>
-        <td id='3'></td>
-        <td id='4'></td>
-        <td id='5'></td>
-      </tr>
-      <tr>
-        <td id='6'></td>
-        <td id='7'></td>
-        <td id='8'></td>
-      </tr>
-    </table>
-    <div>PLAYER 2</div>
+
+    <aside id='player1'>
+      <!-- <div class='sidecontainer'>
+  <img src='images/signpost.jpg' style="width:100%;">
+  <div class="bottom-left">Bottom Left</div>
+  <div class="top-left">Top Left</div>
+  <div class="top-right">Top Right</div>
+  <div class="bottom-right">Bottom Right</div>
+  <div class="centered">Centered</div>
+</div> -->
+      <h3>PLAYER 1</h3>
+      <h2 class='score'>Score: <span id='play1score'>0</span></h2>
+    </aside>
+
+    <main>
+      <table class='game'>
+        <tr>
+          <td id='0'></td>
+          <td id='1'></td>
+          <td id='2'></td>
+        </tr>
+        <tr>
+          <td id='3'></td>
+          <td id='4'></td>
+          <td id='5'></td>
+        </tr>
+        <tr>
+          <td id='6'></td>
+          <td id='7'></td>
+          <td id='8'></td>
+        </tr>
+      </table>
+    </main>
+
+    <aside id='player2'>
+      <h3>PLAYER 2</h3>
+      <h2 class='score'>Score: <span id='play2score'>0</span></h2>
+    </aside>
   </div>
+  <footer>
+    <!-- <img src=''> -->
+  </footer>
   <script src='app.js'></script>
 </body>
 
