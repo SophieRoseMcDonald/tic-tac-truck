@@ -1,4 +1,5 @@
- Project #1: The Game Tic Tac Toe
+Project #1: The Game Tic Tac Toe
+play game here: https://sophierosemcdonald.github.io/tic-tac-truck/
 
 ### Overview
 

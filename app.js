@@ -3,6 +3,8 @@ var tile = document.querySelectorAll('td');
 var count = 0;
 var result = [null, null, null, null, null, null, null, null, null]
 var player = document.querySelectorAll('h3')
+// var player1 = document.querySelector('#play1score')
+// var player2 = document.querySelector('#play1score')
 // var winningCombinations = [
 //   [0, 1, 2],
 //   [3, 4, 5],
@@ -78,6 +80,15 @@ function playerTurn(event) {
 }
 
 
+// function resetButton (){
+// 		for(var i = 0 ; i < tile.length; i++){
+//
+// 			tile[i].classList.remove('imageO');
+// 			tile[i].classList.remove('imageX');
+// 			result = [null, null, null, null, null, null, null, null, null];
+//result[i] = null # having it inside the loop otherwise above pull out of loop
+// 		}
+// resetButton();
 
 
 //listen for each click
