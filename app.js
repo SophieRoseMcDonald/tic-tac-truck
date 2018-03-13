@@ -1,10 +1,11 @@
-// console.log('sanitycheck')
 var tile = document.querySelectorAll('td');
 var count = 0;
 var result = [null, null, null, null, null, null, null, null, null]
 var player = document.querySelectorAll('h3')
-// var player1 = document.querySelector('#play1score')
-// var player2 = document.querySelector('#play1score')
+var play1score = document.querySelector('#play1score')
+var play2score = document.querySelector('#play2score')
+var resetBtn = document.querySelector('#reset')
+
 // var winningCombinations = [
 //   [0, 1, 2],
 //   [3, 4, 5],
@@ -41,6 +42,7 @@ var checkForMatch = function() {
     result[2] === 'X' && result[4] === 'X' && result[6] === 'X'
   ) {
     alert('Player 2 Wins!')
+    // play1score.count +1;
   } else if (result[0] === 'O' && result[1] === 'O' && result[2] === 'O' ||
     result[3] === 'O' && result[4] === 'O' && result[5] === 'O' ||
     result[6] === 'O' && result[7] === 'O' && result[8] === 'O' ||
@@ -51,7 +53,7 @@ var checkForMatch = function() {
     result[0] === 'O' && result[4] === 'O' && result[8] === 'O' ||
     result[2] === 'O' && result[4] === 'O' && result[6] === 'O') {
     alert('Player 1 Wins!')
-  } else if (result.indexOf(null) === -1){
+  } else if (result.indexOf(null) === -1) {
     alert('It looks like a tie')
   }
 
@@ -73,25 +75,29 @@ function playerTurn(event) {
     event.target.classList.add('O')
     result[cellId] = 'O'
   }
-  console.log('eventtarget: ', cell);
-  console.log('cellId: ', cellId);
-  console.log('result');
+  // console.log('eventtarget: ', cell);
+  // console.log('cellId: ', cellId);
+  // console.log('result');
   checkForMatch();
 }
 
 
-// function resetButton (){
-// 		for(var i = 0 ; i < tile.length; i++){
-//
-// 			tile[i].classList.remove('imageO');
-// 			tile[i].classList.remove('imageX');
-// 			result = [null, null, null, null, null, null, null, null, null];
-//result[i] = null # having it inside the loop otherwise above pull out of loop
-// 		}
-// resetButton();
+
+  //listen for each click
+  tile.forEach(function(elem) {
+    elem.addEventListener('click', checkEmptyTile);
+  })
+  //refactor to create just one event listener
 
 
-//listen for each click
-tile.forEach(function(elem) {
-  elem.addEventListener('click', checkEmptyTile);
-})
+  //reset button
+  function resetButton(event) {
+    for (var i = 0; i < tile.length; i++) {
+
+      tile[i].classList.remove('O');
+      tile[i].classList.remove('X');
+      result = [null, null, null, null, null, null, null, null, null];
+
+    }
+}
+    resetBtn.addEventListener('click', resetButton);
