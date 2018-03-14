@@ -1,21 +1,14 @@
 var tile = document.querySelectorAll('td');
 var count = 0;
-var result = [null, null, null, null, null, null, null, null, null]
-var player = document.querySelectorAll('h3')
-var play1score = document.querySelector('#play1score')
-var play2score = document.querySelector('#play2score')
-var resetBtn = document.querySelector('#reset')
-
-// var winningCombinations = [
-//   [0, 1, 2],
-//   [3, 4, 5],
-//   [6, 7, 8],
-//   [0, 3, 6],
-//   [1, 4, 7],
-//   [2, 5, 8],
-//   [0, 4, 8],
-//   [2, 4, 6]
-// ];
+var result = [null, null, null, null, null, null, null, null, null];
+var player = document.querySelectorAll('h3');
+var p1Score = document.querySelector('#play1score');
+var p2Score = document.querySelector('#play2score');
+var resetBtn = document.querySelector('#reset');
+var newGame = document.querySelector('#newGame')
+var counterp1 = 0;
+var counterp2 = 0;
+var xwins;
 
 //Allow only one token per tile
 var checkEmptyTile = function(event) {
@@ -31,7 +24,6 @@ var checkEmptyTile = function(event) {
 
 //check for winning combinations
 var checkForMatch = function() {
-  // debugger
   if (result[0] === 'X' && result[1] === 'X' && result[2] === 'X' ||
     result[3] === 'X' && result[4] === 'X' && result[5] === 'X' ||
     result[6] === 'X' && result[7] === 'X' && result[8] === 'X' ||
@@ -41,26 +33,25 @@ var checkForMatch = function() {
     result[0] === 'X' && result[4] === 'X' && result[8] === 'X' ||
     result[2] === 'X' && result[4] === 'X' && result[6] === 'X'
   ) {
+    counterp2 += 1;
+    p2Score.textContent = Number(counterp2);
     alert('Player 2 Wins!')
-    // play1score.count +1;
+
   } else if (result[0] === 'O' && result[1] === 'O' && result[2] === 'O' ||
     result[3] === 'O' && result[4] === 'O' && result[5] === 'O' ||
     result[6] === 'O' && result[7] === 'O' && result[8] === 'O' ||
     result[0] === 'O' && result[3] === 'O' && result[6] === 'O' ||
     result[1] === 'O' && result[4] === 'O' && result[7] === 'O' ||
-
     result[2] === 'O' && result[5] === 'O' && result[8] === 'O' ||
     result[0] === 'O' && result[4] === 'O' && result[8] === 'O' ||
     result[2] === 'O' && result[4] === 'O' && result[6] === 'O') {
+    counterp1 += 1;
+    p1Score.textContent = Number(counterp1);
     alert('Player 1 Wins!')
   } else if (result.indexOf(null) === -1) {
     alert('It looks like a tie')
   }
-
-
 }
-
-
 
 // execute each players turn
 function playerTurn(event) {
@@ -75,29 +66,33 @@ function playerTurn(event) {
     event.target.classList.add('O')
     result[cellId] = 'O'
   }
-  // console.log('eventtarget: ', cell);
-  // console.log('cellId: ', cellId);
-  // console.log('result');
   checkForMatch();
 }
 
+//listen for each click
+tile.forEach(function(elem) {
+  elem.addEventListener('click', checkEmptyTile);
+})
+//refactor to create just one event listener
 
 
-  //listen for each click
-  tile.forEach(function(elem) {
-    elem.addEventListener('click', checkEmptyTile);
-  })
-  //refactor to create just one event listener
+//reset button
+function resetButton(event) {
+  for (var i = 0; i < tile.length; i++) {
 
+    tile[i].classList.remove('O');
+    tile[i].classList.remove('X');
+    result = [null, null, null, null, null, null, null, null, null];
 
-  //reset button
-  function resetButton(event) {
-    for (var i = 0; i < tile.length; i++) {
-
-      tile[i].classList.remove('O');
-      tile[i].classList.remove('X');
-      result = [null, null, null, null, null, null, null, null, null];
-
-    }
+  }
 }
-    resetBtn.addEventListener('click', resetButton);
+resetBtn.addEventListener('click', resetButton);
+
+// function newGame(event) {
+//   debugger
+//   p1Score.textContent = 0;
+//   p2Score.textContent = 0;
+//   resetButton()
+//   }
+//
+// newGame.addEventListener('click', newGame);
